@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class SpriteBillboard : MonoBehaviour
 {
-    [SerializeField] bool FreezeXZAxis = true;
-    
-    void Update()
+    private Camera cam;
+
+    void Start()
     {
-        if(FreezeXZAxis)
-        {
-            transform.rotation = Quaternion.Euler(0f, Camera.main.transform.rotation.eulerAngles.y, 0f);
-        }
-        else
-        {
-            transform.rotation = Camera.main.transform.rotation;
-        }
+        cam = Camera.main;
+    }
+    void LateUpdate()
+    {
+        transform.LookAt(cam.transform);
+
+        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y - 180f, 0f);
     }
 }
