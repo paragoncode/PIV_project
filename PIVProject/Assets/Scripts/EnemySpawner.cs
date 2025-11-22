@@ -11,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     private float timeUntilSpawn;
 
+    public float spawnRadius = 5f;
+
 
     void Awake()
     {
@@ -31,7 +33,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(EnemyPrefab, gameObject.transform.position, Quaternion.identity);
+        Vector3 spawnOffset = Random.insideUnitCircle * spawnRadius;
+        Vector3 spawnPosition = (Vector3)gameObject.transform.position + spawnOffset;
+        Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
     }
 
     private void SetTimeUntilSpawn()

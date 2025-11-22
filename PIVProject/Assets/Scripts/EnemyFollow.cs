@@ -1,0 +1,34 @@
+using UnityEngine;
+
+public class EnemyFollow : MonoBehaviour
+{
+
+    private Transform player;
+
+    private float speed = 2f;
+    private float range = 10f;
+
+    private float distance;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        FollowPlayer();
+    }
+
+    private void FollowPlayer()
+    {
+        distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance <= range)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.LookAt(player.position);
+        }
+    }
+}
