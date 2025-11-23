@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4206fc3cb3e4db7428f1101d2bcd9377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
+  ghostMaterial: {fileID: 2100000, guid: 354f8f9b683a27b419b92eb062bd317f, type: 2}
 --- !u!1001 &8743258381993166752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,10 +110,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 354f8f9b683a27b419b92eb062bd317f, type: 2}
     - target: {fileID: 919132149155446097, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
       propertyPath: m_Name
       value: ghost8
       objectReference: {fileID: 0}
+    - target: {fileID: 2066070334871878470, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 354f8f9b683a27b419b92eb062bd317f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

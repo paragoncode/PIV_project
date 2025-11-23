@@ -9,6 +9,8 @@ public class EnemyFollow : MonoBehaviour
     private float range = 10f;
 
     private float distance;
+
+    public Material ghostMaterial;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +20,7 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         FollowPlayer();
     }
 
@@ -29,6 +32,11 @@ public class EnemyFollow : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             transform.LookAt(player.position);
+            ghostMaterial.color = Color.red;
+        }
+        else if (distance > range)
+        {
+            ghostMaterial.color = Color.white;
         }
     }
 }
