@@ -12,8 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private float timeUntilSpawn;
 
     public float spawnRadius = 5f;
-
-
+    public GameObject findCrucifix;
     void Awake()
     {
         SetTimeUntilSpawn();
@@ -22,9 +21,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        findCrucifix = GameObject.Find("Rotation");
         timeUntilSpawn -= Time.deltaTime;
         
-        if (timeUntilSpawn <= 0)
+        if (findCrucifix == null && timeUntilSpawn <= 0)
         {
             SpawnEnemy();
             SetTimeUntilSpawn();

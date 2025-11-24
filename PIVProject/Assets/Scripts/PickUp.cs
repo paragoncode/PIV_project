@@ -19,6 +19,7 @@ public class PickUp : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && checkPlayer)
         {
             Destroy(gameObject);
+            pickUpText.SetActive(false);
         }
     }
 

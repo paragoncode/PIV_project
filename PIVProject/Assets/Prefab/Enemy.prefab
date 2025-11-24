@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4206fc3cb3e4db7428f1101d2bcd9377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
+  range: 30
   ghostMaterial: {fileID: 2100000, guid: 354f8f9b683a27b419b92eb062bd317f, type: 2}
 --- !u!1001 &8743258381993166752
 PrefabInstance:
@@ -72,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
       propertyPath: m_LocalPosition.z

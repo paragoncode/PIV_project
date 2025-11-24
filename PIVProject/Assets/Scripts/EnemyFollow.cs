@@ -6,11 +6,12 @@ public class EnemyFollow : MonoBehaviour
     private Transform player;
 
     private float speed = 2f;
-    private float range = 10f;
-
+    public float range = 30f;
     private float distance;
 
     public Material ghostMaterial;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
