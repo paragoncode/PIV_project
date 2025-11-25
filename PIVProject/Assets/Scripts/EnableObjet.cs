@@ -1,16 +1,14 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class EnableObjet : MonoBehaviour
 {
+
+    public GameObject objectOnPlayer;
     private bool checkPlayer;
-
-    public GameObject pickUpText;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pickUpText.SetActive(false);
+        objectOnPlayer = GameObject.Find("First person player/Main Camera/Crucifix14");
     }
 
     // Update is called once per frame
@@ -18,8 +16,7 @@ public class PickUp : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && checkPlayer)
         {
-            Destroy(gameObject);
-            pickUpText.SetActive(false);
+            objectOnPlayer.SetActive(true);
         }
     }
 
@@ -28,7 +25,6 @@ public class PickUp : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             checkPlayer = true;
-            pickUpText.SetActive(true);
         }
     }
 
@@ -37,7 +33,6 @@ public class PickUp : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             checkPlayer = false;
-            pickUpText.SetActive(false);
         }
     }
 }

@@ -5,17 +5,18 @@ public class EnemyFollow : MonoBehaviour
 
     private Transform player;
 
-    private float speed = 2f;
-    public float range = 30f;
+    private float speed = 3.5f;
+    private float range = 100f;
     private float distance;
 
     public Material ghostMaterial;
 
-    
+    public float health, maxHealth = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -38,5 +39,14 @@ public class EnemyFollow : MonoBehaviour
         {
             ghostMaterial.color = Color.white;
         }
+    }
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        } 
     }
 }
