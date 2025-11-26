@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
@@ -11,12 +12,16 @@ public class EnemyFollow : MonoBehaviour
 
     public Material ghostMaterial;
 
-    public float health, maxHealth = 2f;
+    public int health, maxHealth = 2;
+
+    public int damage = 1;
+    public float magnitude = 500f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         health = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -40,7 +45,7 @@ public class EnemyFollow : MonoBehaviour
             ghostMaterial.color = Color.white;
         }
     }
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
 
@@ -48,5 +53,22 @@ public class EnemyFollow : MonoBehaviour
         {
             Destroy(gameObject);
         } 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            UIManager.instance.PlayerTakeDamage(damage);
+            Debug.Log("Player is damaged");
+        }
+
+        else if(collision.gameObject.TryGetComponent<Bullet>(out Bullet bullet))
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            Vector3 forceDirection = transform.position - bullet.transform.position;
+            forceDirection.Normalize();
+            rb.AddForce(forceDirection * magnitude);
+            Debug.Log("Force is applied");
+        }
     }
 }

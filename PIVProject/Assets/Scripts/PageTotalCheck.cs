@@ -1,44 +1,35 @@
 using UnityEngine;
 
-public class EnableObjet : MonoBehaviour
+public class PageTotalCheck : MonoBehaviour
 {
-
-    public GameObject objectOnPlayer;
-    private bool checkPlayer;
-    public GameObject pickUpText;
+    public UIManager checkPage;
+    bool checkPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        objectOnPlayer = GameObject.Find("First person player/Main Camera/Crucifix14");
-        pickUpText.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && checkPlayer)
+        if(checkPlayer)
         {
-            objectOnPlayer.SetActive(true);
-            Destroy(gameObject);
-            pickUpText.SetActive(false);
+            checkPage.PageCheck();
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
             checkPlayer = true;
-            pickUpText.SetActive(true);
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
             checkPlayer = false;
-            pickUpText.SetActive(false);
         }
     }
 }

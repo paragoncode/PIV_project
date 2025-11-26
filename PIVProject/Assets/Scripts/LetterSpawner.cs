@@ -28,7 +28,7 @@ public class LetterSpawner : MonoBehaviour
 
     private void SpawnLetter()
     {
-        Vector3 spawnPoint = new Vector3(Random.Range(-30, 0), 1f, Random.Range(-30, 0));
+        Vector3 spawnPoint = transform.position + Random.insideUnitSphere * spawnRadius;
         //Instantiate(letter, spawnPoint, Quaternion.identity);
         //Debug.Log("Letter Spawned");
         if(!Physics.CheckSphere(spawnPoint, spawnCollisionCheckRadius))

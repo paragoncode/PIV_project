@@ -16,8 +16,14 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PickUpPage();
+    }
+
+    private void PickUpPage()
+    {
         if(Input.GetKeyDown(KeyCode.E) && checkPlayer)
         {
+            UIManager.instance.AddPage();
             Destroy(gameObject);
             pickUpText.SetActive(false);
         }

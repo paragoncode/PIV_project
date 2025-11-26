@@ -47,10 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4206fc3cb3e4db7428f1101d2bcd9377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  range: 50
   ghostMaterial: {fileID: 2100000, guid: 354f8f9b683a27b419b92eb062bd317f, type: 2}
   health: 0
   maxHealth: 2
+  damage: 1
+  magnitude: 200
 --- !u!136 &7653914194429131995
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70,10 +71,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.65255976
-  m_Height: 2.3395576
+  m_Radius: 0.6
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.15255976, y: 1.0852613, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &6849488940905071135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97,7 +98,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -184,9 +185,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2647466618653930776}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9206149680785717438}
   m_SourcePrefab: {fileID: 100100000, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
 --- !u!1 &8473279695321168625 stripped
 GameObject:
@@ -215,28 +213,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &9206149680785717438
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8473279695321168625}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3209554841506446676, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
 --- !u!4 &9141447776726786123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 17170f19928d57d418068cb7b280dec1, type: 3}
