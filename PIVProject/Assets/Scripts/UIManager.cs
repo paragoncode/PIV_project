@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public TMP_Text pageText;
     public TMP_Text healthText;
+    public GameObject escapeText;
 
     int pageCount = 0;
     int maxPageCount = 8;
@@ -38,7 +39,11 @@ public class UIManager : MonoBehaviour
     {
         if(pageCount == maxPageCount)
         {
-            gameOverWin.SetUp();
+            escapeText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                gameOverWin.SetUp();
+            }
         }
     }
 

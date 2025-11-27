@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
         SetTimeUntilSpawn();
     }
 
-    // Update is called once per frame
     void Update()
     {
         findCrucifix = GameObject.Find("Rotation");

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    public float rotationPerMin = 5f;
+    public float rotationSpeed = 5f;
     void Update()
     {
-        transform.Rotate(0f, 6f * rotationPerMin * Time.deltaTime, 0f);
+        transform.Rotate(0f, 6f * rotationSpeed * Time.deltaTime, 0f);
     }
 }
