@@ -13,7 +13,7 @@ public class PageTotalCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(checkPlayer)
+        if(Input.GetKeyDown(KeyCode.E) && checkPlayer)
         {
             checkPage.PageCheck();
         }

@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
         health = maxHealth;
         healthText.text = "Health: " + health.ToString();
         pageText.text = "Pages: " + pageCount.ToString() + "/8";
+        pageCount = 0;
     }
 
     public void AddPage()
